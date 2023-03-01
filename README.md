@@ -1,6 +1,6 @@
 # SvelteKit with Integrated WebSocket Server
 
-*Updated: February 28, 2023, compatible with SvelteKit 1.8.8*
+*Updated: March 1, 2023, compatible with SvelteKit 1.9.2*
 
 First-class support for WebSockets within SvelteKit by attaching a WebSocket server to the global state.
 
@@ -31,7 +31,7 @@ pnpm run prodServer
 
 One glaring omission from the stable release of SvelteKit has been out-of-the-box integration for [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/Websockets_API). In many modern web applications, WebSockets are the preferred channel for real-time communication. With first-class support, the advantages of co-locating server-side code within the SvelteKit project structure is extended to real-time application logic. Utilities, logic and types can be shared across the codebase.
 
-As of SvelteKit 1.8.8 (February 28, 2023), WebSockets are not supported out-of-the-box. The recommended way of integrating a custom WebSocket server within SvelteKit is through [middleware](https://kit.svelte.dev/faq#how-do-i-use-middleware). The helpful SvelteKit community has therefore provided a temporary solution:
+As of SvelteKit 1.9.2 (March 1, 2023), WebSockets are not supported out-of-the-box. The recommended way of integrating a custom WebSocket server within SvelteKit is through [middleware](https://kit.svelte.dev/faq#how-do-i-use-middleware). The helpful SvelteKit community has therefore provided a temporary solution:
 
 - Write your WebSocket server code and logic within the SvelteKit project structure (for example `$lib/server/websocket`).
 - Use [esbuild](https://esbuild.github.io/) to compile a single JavaScript file that contains the WebSocket server or logic (for example `/dist/websocket-middleware.js`).
