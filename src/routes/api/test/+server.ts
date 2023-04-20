@@ -3,7 +3,7 @@ import type { RequestHandler } from './$types';
 
 export const GET = (async ({ url, locals }) => {
   if (locals.wss) {
-    locals.wss.clients.forEach(function each(client) {
+    locals.wss.clients.forEach(client => {
       if (client.readyState === 1) {
         client.send(`Hello from the GET handler at ${new Date().toLocaleString()}`);
       }

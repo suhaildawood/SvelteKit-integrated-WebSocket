@@ -1,10 +1,10 @@
-import type { Server } from 'ws';
+import type { ExtendedWebSocketServer } from '$lib/server/webSocketUtils';
 
 declare global {
 	namespace App {
 		// interface Error {}
 		interface Locals {
-			wss?: Server;
+			wss?: ExtendedWebSocketServer;
 		}
 		// interface PageData {}
 		// interface Platform {}

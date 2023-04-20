@@ -11,16 +11,16 @@
     if (webSocketEstablished) return;
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
     ws = new WebSocket(`${protocol}//${window.location.host}/websocket`);
-    ws.addEventListener('open', function (event) {
+    ws.addEventListener('open', event => {
       webSocketEstablished = true;
       console.log('[websocket] connection open', event);
       logEvent('[websocket] connection open');
     });
-    ws.addEventListener('close', function (event) {
+    ws.addEventListener('close', event => {
       console.log('[websocket] connection closed', event);
       logEvent('[websocket] connection closed');
     });
-    ws.addEventListener('message', function (event) {
+    ws.addEventListener('message', event => {
       console.log('[websocket] message received', event);
       logEvent(`[websocket] message received: ${event.data}`);
     });
