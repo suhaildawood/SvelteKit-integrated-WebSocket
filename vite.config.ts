@@ -11,6 +11,10 @@ export default defineConfig({
 			configureServer(server) {
 				createWSSGlobalInstance();
 				server.httpServer?.on('upgrade', onHttpServerUpgrade);
+			},
+			configurePreviewServer(server) {
+				createWSSGlobalInstance();
+				server.httpServer?.on('upgrade', onHttpServerUpgrade);
 			}
 		},
 	]
